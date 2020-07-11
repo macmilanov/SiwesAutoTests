@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.examples</groupId>
+	<artifactId>siweGuiTest</artifactId>
+	<version>1</version>
+
+	<name>siweGuiTest</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>6.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>6.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>6.2.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+			<plugins>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
+				<!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.0.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.7.0</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.20.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.0.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.1.0</version>
+					<configuration>
+						<excludeDefaultDirectories>true</excludeDefaultDirectories>
+						<filesets>
+							<fileset>
+								<directory>target</directory>
+								<followSymlinks>false</followSymlinks>
+								<includes>
+									<include>**/jmeter/reports/**</include>
+									<include>**/jmeter/results/**</include>
+									<include>**/jmeter/logs/**</include>
+									<include>**/jmeter/testFiles/**</include>
+								</includes>
+							</fileset>
+						</filesets>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<profiles>
+		<profile>
+			<id>firefox</id>
+			<properties>
+				<profile.id>local</profile.id>
+				<env>local</env>
+				<grid.username></grid.username>
+				<grid.password></grid.password>
+				<grid2.hub></grid2.hub>
+				<site.url>http://siwes.xrm.ru:10480</site.url>
+				<browser.name>firefox</browser.name>
+				<browser.version></browser.version>
+				<browser.platform></browser.platform>
+				<screenshots.path>target/</screenshots.path>
+				<reports.path>C:\Temp\Downloads\</reports.path>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>chrome</id>
+			<properties>
+				<profile.id>chrome</profile.id>
+				<env>dev</env>
+				<grid.username></grid.username>
+				<grid.password></grid.password>
+				<grid2.hub></grid2.hub>
+				<site.url>http://siwes.xrm.ru:10480</site.url>
+				<browser.name>chrome</browser.name>
+				<browser.version></browser.version>
+				<browser.platform></browser.platform>
+				<screenshots.path>target/</screenshots.path>
+				<reports.path>C:\Temp\Downloads\</reports.path>
+			</properties>
+		</profile>
+	</profiles>
+</project>
