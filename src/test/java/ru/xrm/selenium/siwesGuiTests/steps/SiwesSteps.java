@@ -89,5 +89,6 @@ public class SiwesSteps {
         if (scenario.isFailed()) {
             byte[] screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
             /*scenario.embed(screenshot, "image/jpeg"); */}
-        webDriver.quit();}
+        webDriver.close();}
+
 }

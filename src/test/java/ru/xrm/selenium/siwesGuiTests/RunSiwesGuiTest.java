@@ -7,8 +7,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/java/ru/xrm/selenium/SiwesGuiFeatures",
+        glue = "src/test/java/ru/xrm/selenium/siwesGuiTests/steps",
         plugin = { "pretty", "html:target/cucumber-reports"}
 )
-public class RunSiwesGuiTest {
+public class RunSiwesGuiTests {
 
 }
