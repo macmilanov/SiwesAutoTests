@@ -1,5 +1,6 @@
 package ru.xrm.selenium.applogic;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.xrm.selenium.util.PropertyLoader;
 
@@ -10,11 +11,19 @@ public class ApplicationManager {
     private NavigationHelper navHelper;
     private String baseUrl;
     private static PropertyLoader propertyLoader;
+    private WebDriver driver;
 
     public ApplicationManager()
     {
+        navHelper = new NavigationHelper(this);
         propertyLoader = new PropertyLoader();
-        baseUrl = propertyLoader.loadProperty("site.url");
+        baseUrl="http://siwes.xrm.ru:10480";
+        //baseUrl = propertyLoader.loadProperty("site.url");      active properties не инициализиуются
+    }
+
+    public WebDriver getWebDriver()
+    {
+        return driver;
     }
 
     public String getBaseUrl()

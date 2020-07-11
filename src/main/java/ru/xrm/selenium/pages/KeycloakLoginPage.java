@@ -11,13 +11,12 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElemen
 
 public class KeycloakLoginPage {
 
-    private WebDriverWait wait;
     private WebDriver webDriver;
     @FindBy(xpath = "//input[@name='username']")
     private WebElement loginField;
     @FindBy(xpath = "//input[@name='password']")
     private WebElement passwordField;;
-    @FindBy(xpath = "//input[normalize-space()='Log In']")
+    @FindBy(xpath = "//input[@value='Log In']")
     private WebElement loginButton;
 
     public KeycloakLoginPage getKeycloakLoginPage()
@@ -40,7 +39,7 @@ public class KeycloakLoginPage {
     }
     public KeycloakLoginPage ensurePageLoaded()
     {
-        wait.until(presenceOfElementLocated(By.xpath("//div[normalize-space()='Идентификация и аутентификация внутренних систем и пользователей']")));
+        new WebDriverWait(webDriver, 60).until(presenceOfElementLocated(By.xpath("//div[normalize-space()='Идентификация и аутентификация внутренних систем и пользователей']")));
         return this;
     }
 

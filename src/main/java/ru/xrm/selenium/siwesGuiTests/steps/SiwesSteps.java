@@ -1,8 +1,10 @@
 package ru.xrm.selenium.siwesGuiTests.steps;
 
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.ru.*;
+import org.junit.BeforeClass;
 import org.openqa.selenium.OutputType;
 import org.junit.After;
 import org.openqa.selenium.TakesScreenshot;
@@ -25,9 +27,11 @@ public class SiwesSteps {
     private ApplicationManager appManager;
     private NavigationHelper navigationHelper;
 
+
     @Before
     public void startBrowser()
     {
+        appManager = new ApplicationManager();
         webDriver = createWebDriver();
         startingPage = new StartingPage(webDriver);
         keycloakLoginPage = new KeycloakLoginPage(webDriver);
@@ -35,10 +39,13 @@ public class SiwesSteps {
 
 
     }
+
     @Дано("Открыта стартовая страница с кнопкой {string}")
         public void staringPageOpened(String buttonTitle)
         {
-            appManager.getNavigationHelper().openStaringPage();
+            startingPage.openStaringPage()
+                        .ensurePageLoaded();
+            //appManager.getNavigationHelper().openStaringPage();
             assertEquals(startingPage.getEnterButtonText(), buttonTitle);
         }
 
@@ -81,5 +88,6 @@ public class SiwesSteps {
     public void closeBrowser(Scenario scenario) {
         if (scenario.isFailed()) {
             byte[] screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
-            /*scenario.embed(screenshot, "image/jpeg"); */} }
+            /*scenario.embed(screenshot, "image/jpeg"); */}
+        webDriver.quit();}
 }

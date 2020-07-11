@@ -109,13 +109,13 @@
 			<properties>
 				<profile.id>local</profile.id>
 				<env>local</env>
-				<grid.username></grid.username>
-				<grid.password></grid.password>
-				<grid2.hub></grid2.hub>
+				<grid.username/>
+				<grid.password/>
+				<grid2.hub/>
 				<site.url>http://siwes.xrm.ru:10480</site.url>
 				<browser.name>firefox</browser.name>
-				<browser.version></browser.version>
-				<browser.platform></browser.platform>
+				<browser.version/>
+				<browser.platform/>
 				<screenshots.path>target/</screenshots.path>
 				<reports.path>C:\Temp\Downloads\</reports.path>
 			</properties>
@@ -128,13 +128,13 @@
 			<properties>
 				<profile.id>chrome</profile.id>
 				<env>dev</env>
-				<grid.username></grid.username>
-				<grid.password></grid.password>
-				<grid2.hub></grid2.hub>
+				<grid.username/>
+				<grid.password/>
+				<grid2.hub/>
 				<site.url>http://siwes.xrm.ru:10480</site.url>
 				<browser.name>chrome</browser.name>
-				<browser.version></browser.version>
-				<browser.platform></browser.platform>
+				<browser.version/>
+				<browser.platform/>
 				<screenshots.path>target/</screenshots.path>
 				<reports.path>C:\Temp\Downloads\</reports.path>
 			</properties>

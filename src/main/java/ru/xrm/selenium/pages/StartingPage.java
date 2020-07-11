@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.xrm.selenium.applogic.ApplicationManager;
 
@@ -16,7 +17,6 @@ public class StartingPage {
         @FindBy(xpath = "//button[normalize-space()='Войти']")
         private WebElement enterButton;
         private WebDriver webDriver;
-        private WebDriverWait wait;
         private ApplicationManager appManager;
         private static String enterButtonText;
 
@@ -28,7 +28,7 @@ public class StartingPage {
 
         public StartingPage ensurePageLoaded()
         {
-            wait.until(presenceOfElementLocated(By.xpath("//button[normalize-space()='Войти']")));
+            new WebDriverWait(webDriver, 60). until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Войти']")));
             return this;
         }
 
@@ -47,4 +47,9 @@ public class StartingPage {
         {
             enterButton.click();
         }
+
+        public StartingPage openStaringPage(){
+        webDriver.navigate().to("http://siwes.xrm.ru:10480");
+        return this;
+    }
  }

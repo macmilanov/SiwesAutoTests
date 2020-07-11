@@ -27,7 +27,6 @@ public class InformationSystemManagementPage {
     @FindBy(xpath ="//input[@placeholder='Мнемоника']")
     private WebElement InformationSystemMnemonicField;
 
-    private WebDriverWait wait;
     private WebDriver webDriver;
 
     public InformationSystemManagementPage getInformationSystemManagementPage()
@@ -37,7 +36,7 @@ public class InformationSystemManagementPage {
 
     public InformationSystemManagementPage ensurePageLoaded()
     {
-        wait.until(presenceOfElementLocated(By.xpath("//h2[normalize-space()='Информационные системы, зарегистрированные в СМЭВ']")));
+        new WebDriverWait(webDriver, 60).until(presenceOfElementLocated(By.xpath("//h2[normalize-space()='Информационные системы, зарегистрированные в СМЭВ']")));
         return this;
     }
 
