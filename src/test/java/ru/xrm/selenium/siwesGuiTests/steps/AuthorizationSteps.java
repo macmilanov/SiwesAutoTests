@@ -21,7 +21,7 @@ import ru.xrm.selenium.util.RandomInformationSystemGenerator;
 import static ru.xrm.selenium.webdriver.webdriver.WebDriverFactory.createWebDriver;
 
 
-public class SiwesSteps {
+public class AuthorizationSteps {
     private WebDriver webDriver;
     private StartingPage startingPage;
     private KeycloakLoginPage keycloakLoginPage;
@@ -48,10 +48,10 @@ public class SiwesSteps {
         webDriver.close();
     }
 
-    @Дано("Открыта стартовая страница")
-    public void staringPageOpened(String buttonTitle) {
-        startingPage.openStaringPage()
-                .ensurePageLoaded();}
+    @Дано("Открыта стартовая страница, параметр авторизации {string}")
+    public void staringPageOpened(String isAuthorized) {
+        Boolean bool = Boolean.parseBoolean(isAuthorized);
+        startingPage.openStaringPage(bool);}
 
 
     @Когда("Кликаем кнопку \"Войти\"")
@@ -76,7 +76,7 @@ public class SiwesSteps {
 
 
     @И("Кликнута кнопка \"Log in\"")
-    public void loginButtonClicked() {
+    public void clickLoginButton() {
         keycloakLoginPage.clickLoginButton();
     }
 
@@ -85,18 +85,23 @@ public class SiwesSteps {
         return informationSystemManagementPage.ensurePageLoaded();
     }
 
+    @Когда ("Кликаем кнопку \"Выйти\"")
+    public void clickExitButton(){
+        informationSystemManagementPage.clickExitButton();
+    }
+
     @Когда("Кликаем кнопку Добавить")
-    public void addButtonClicked(){
+    public void clickAddButton() {
         informationSystemManagementPage.ensurePageLoaded().clickAddButton();
     }
 
-    @То ("Открывается карточка создания Информационной системы")
-    public InformationSystemAddEditPage openInformationSystemAddEditPage(){
+    @То("Открывается карточка создания Информационной системы")
+    public InformationSystemAddEditPage openInformationSystemAddEditPage() {
         return informationSystemAddEditPage.ensurePageLoaded();
     }
 
-    @Когда ("Генерируем Информационную систему")
-    public InformationSystem generateRandomInformationSystem(){
+    @Когда("Генерируем Информационную систему")
+    public InformationSystem generateRandomInformationSystem() {
         return RandomInformationSystemGenerator.getRandomInformationSystem();
     }
 

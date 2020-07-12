@@ -7,14 +7,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
 public class KeycloakLoginPage {
 
     private WebDriver webDriver;
-    @FindBy(xpath = "//input[@name='username']")
+    @FindBy(id = "username")
     private WebElement loginField;
-    @FindBy(xpath = "//input[@name='password']")
+    @FindBy(id = "password")
     private WebElement passwordField;;
     @FindBy(xpath = "//input[@value='Log In']")
     private WebElement loginButton;
@@ -24,22 +26,15 @@ public class KeycloakLoginPage {
         return this;
     }
 
-    public KeycloakLoginPage setLoginField(String text)
+    public void fillTextField (String field, String value)
     {
-        loginField.clear();
-        loginField.sendKeys(text);
-        return this;
+        webDriver.findElement(By.id(field))
+                .sendKeys(value);
     }
 
-    public KeycloakLoginPage setPasswordField(String text)
-    {
-        passwordField.clear();
-        passwordField.sendKeys(text);
-        return this;
-    }
     public KeycloakLoginPage ensurePageLoaded()
     {
-        new WebDriverWait(webDriver, 60).until(presenceOfElementLocated(By.xpath("//div[normalize-space()='Идентификация и аутентификация внутренних систем и пользователей']")));
+        new WebDriverWait(webDriver, 5).until(presenceOfElementLocated(By.xpath("//div[normalize-space()='Идентификация и аутентификация внутренних систем и пользователей']")));
         return this;
     }
 
@@ -52,5 +47,13 @@ public class KeycloakLoginPage {
     {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
+    }
+
+
+    public void fillLoginAndPassword(String login, String password) {
+        loginField.clear();
+        loginField.sendKeys(login);
+        passwordField.clear();
+        passwordField.sendKeys(password);
     }
 }

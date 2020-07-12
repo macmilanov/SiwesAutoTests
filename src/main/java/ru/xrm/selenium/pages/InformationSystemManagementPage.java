@@ -11,15 +11,15 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElemen
 
 public class InformationSystemManagementPage {
     //Общие для всех реестров элементы
-    @FindBy(xpath = "//button[normalize-space='Добавить']")
+    @FindBy(xpath = "//button[normalize-space()='Добавить']")
     private WebElement addButton;
-    @FindBy(xpath = "//button[normalize-space='Выход']")
+    @FindBy(xpath = "//button[normalize-space()='Выход']")
     private WebElement exitButton;
-    @FindBy(xpath = "//label[normalize-space='Только активные']/preceding-sibling::input[@type='checkbox']")
+    @FindBy(xpath = "//label[normalize-space()='Только активные']/preceding-sibling::input[@type='checkbox']")
     private WebElement IsActiveCheckbox;
-    @FindBy(xpath = "//button[normalize-space='Найти']")
+    @FindBy(xpath = "//button[normalize-space()='Найти']")
     private WebElement SearchButton;
-    @FindBy(xpath = "//button[normalize-space='Очистить']")
+    @FindBy(xpath = "//button[normalize-space()='Очистить']")
     private WebElement ClearFilterButton;
     //Элементы реестра ИС
     @FindBy(xpath = "//input[@placeholder='Наименование ИС']")
@@ -36,7 +36,7 @@ public class InformationSystemManagementPage {
 
     public InformationSystemManagementPage ensurePageLoaded()
     {
-        new WebDriverWait(webDriver, 60).until(presenceOfElementLocated(By.xpath("//h2[normalize-space()='Информационные системы, зарегистрированные в СМЭВ']")));
+        new WebDriverWait(webDriver, 5).until(presenceOfElementLocated(By.xpath("//button[normalize-space()='Добавить']")));
         return this;
     }
 
@@ -44,5 +44,13 @@ public class InformationSystemManagementPage {
     {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
+    }
+
+    public void clickAddButton(){
+        addButton.click();
+    }
+
+    public void clickExitButton() {
+        exitButton.click();
     }
 }

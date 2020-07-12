@@ -7,8 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import ru.xrm.selenium.applogic.ApplicationManager;
 
+
+import java.util.function.BooleanSupplier;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
@@ -17,7 +18,6 @@ public class StartingPage {
         @FindBy(xpath = "//button[normalize-space()='Войти']")
         private WebElement enterButton;
         private WebDriver webDriver;
-        private ApplicationManager appManager;
         private static String enterButtonText;
 
         public String getEnterButtonText()
@@ -28,7 +28,7 @@ public class StartingPage {
 
         public StartingPage ensurePageLoaded()
         {
-            new WebDriverWait(webDriver, 60). until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Войти']")));
+            new WebDriverWait(webDriver, 5). until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Войти']")));
             return this;
         }
 
@@ -48,8 +48,11 @@ public class StartingPage {
             enterButton.click();
         }
 
-        public StartingPage openStaringPage(){
-        webDriver.navigate().to("http://siwes.xrm.ru:10480");
-        return this;
+        public StartingPage openStaringPage(Boolean isAuthorized){
+        if(isAuthorized)
+        {
+            webDriver.navigate().to("http://siwes.xrm.ru:10480");
+        }
+        return this.ensurePageLoaded();
     }
  }

@@ -1,4 +1,4 @@
-package ru.xrm.selenium.siwesGuiTests.steps;
+package ru.xrm.selenium.toDevFeatures;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;

@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class WebDricerFactory {
+public class WebDriverFactory {
     public static WebDriver createWebDriver() {
         String webdriver = System.getProperty("browser", "firefox");
         switch(webdriver) {

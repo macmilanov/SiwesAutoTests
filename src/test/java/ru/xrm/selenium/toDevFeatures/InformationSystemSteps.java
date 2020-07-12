@@ -1,4 +1,4 @@
-package ru.xrm.selenium.siwesGuiTests.steps;
+package ru.xrm.selenium.toDevFeatures;
 
 import io.cucumber.java.ru.Когда;
 import io.cucumber.java.ru.То;
@@ -12,7 +12,7 @@ import ru.xrm.selenium.util.RandomInformationSystemGenerator;
 import ru.xrm.selenium.pages.InformationSystemManagementPage;
 
 public class InformationSystemSteps {
-    /*private WebDriver webDriver;
+    private WebDriver webDriver;
     private StartingPage startingPage;
     private KeycloakLoginPage keycloakLoginPage;
     private InformationSystemManagementPage informationSystemManagementPage;
@@ -32,5 +32,5 @@ public class InformationSystemSteps {
     @Когда("Генерируем Информационную систему")
     public InformationSystem generateRandomInformationSystem() {
         return RandomInformationSystemGenerator.getRandomInformationSystem();
-    }*/
+    }
 }
