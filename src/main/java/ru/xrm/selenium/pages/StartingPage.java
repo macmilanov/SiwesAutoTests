@@ -9,9 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.xrm.selenium.applogic.ApplicationManager;
 
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
-
 public class StartingPage {
 
         @FindBy(xpath = "//button[normalize-space()='Войти']")

@@ -1,14 +1,13 @@
 package ru.xrm.selenium.siwesGuiTests.steps;
 
 import io.cucumber.java.Before;
-import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.ru.*;
-import org.junit.BeforeClass;
 import org.openqa.selenium.OutputType;
 import org.junit.After;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import ru.xrm.selenium.applogic.ApplicationManager;
 import ru.xrm.selenium.applogic.NavigationHelper;
 import ru.xrm.selenium.pages.InformationSystemManagementPage;
@@ -16,7 +15,6 @@ import ru.xrm.selenium.pages.KeycloakLoginPage;
 import ru.xrm.selenium.pages.StartingPage;
 import static org.junit.Assert.*;
 import static ru.xrm.selenium.webdriver.webdriver.WebDricerFactory.createWebDriver;
-import io.cucumber.core.api.*;
 
 
 public class SiwesSteps {
@@ -31,6 +29,7 @@ public class SiwesSteps {
     @Before
     public void startBrowser()
     {
+        //System.setProperty("webdriver.chrome.driver", "D:\\Work\\drivers\\chromedriver.exe");
         appManager = new ApplicationManager();
         webDriver = createWebDriver();
         startingPage = new StartingPage(webDriver);
@@ -89,6 +88,6 @@ public class SiwesSteps {
         if (scenario.isFailed()) {
             byte[] screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
             /*scenario.embed(screenshot, "image/jpeg"); */}
-        webDriver.close();}
+        webDriver.quit();}
 
 }
