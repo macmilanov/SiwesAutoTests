@@ -1,14 +1,16 @@
 package ru.xrm.selenium.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.xrm.selenium.applogic.ApplicationManager;
 import ru.xrm.selenium.model.InformationSystem;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 public class InformationSystemManagementPage {
     //Общие для всех реестров элементы
@@ -27,10 +29,9 @@ public class InformationSystemManagementPage {
 
     //Элементы реестра ИС
     @FindBy(xpath = "//input[@placeholder='Наименование ИС']")
-    private WebElement InformationSystemNameField;
+    private WebElement informationSystemNameField;
     @FindBy(xpath = "//input[@placeholder='Мнемоника']")
-    private WebElement InformationSystemMnemonicField;
-
+    private WebElement informationSystemMnemonicField;
 
 
     private WebDriver webDriver;
@@ -40,7 +41,7 @@ public class InformationSystemManagementPage {
     }
 
     public InformationSystemManagementPage ensurePageLoaded() {
-        new WebDriverWait(webDriver, 5).until(presenceOfElementLocated(By.xpath("//button[normalize-space()='Добавить']")));
+        new WebDriverWait(webDriver, 5).until(visibilityOf(addButton));
         return this;
     }
 
@@ -58,16 +59,25 @@ public class InformationSystemManagementPage {
     }
 
     public InformationSystemManagementPage fillManagementPage(InformationSystem createdInformationSystem) {
-        fillTextField(createdInformationSystem.InformationSystemName, InformationSystemNameField);
-        fillTextField(createdInformationSystem.InformationSystemMnemonic, InformationSystemMnemonicField);
-        if (!createdInformationSystem.IsActiveState) { this.isActiveState.click(); }
+        fillAutoCompleteTextField(createdInformationSystem.InformationSystemName, informationSystemNameField);
+        fillAutoCompleteTextField(createdInformationSystem.InformationSystemMnemonic, informationSystemMnemonicField);
+        if (!createdInformationSystem.IsActiveState) {
+            this.isActiveState.click();
+        }
         return this;
     }
 
-    private void fillTextField(String string, WebElement webElement) {
+    private void fillAutoCompleteTextField(String string, WebElement webElement) {
         webElement.clear();
         webElement.sendKeys(string);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        webElement.sendKeys(Keys.TAB);
     }
+
 
     public void clickFindButton() {
         findButton.click();

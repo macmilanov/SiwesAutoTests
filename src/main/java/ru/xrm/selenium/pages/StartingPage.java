@@ -1,12 +1,13 @@
 package ru.xrm.selenium.pages;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class StartingPage {
 
@@ -16,8 +17,10 @@ public class StartingPage {
 
         public StartingPage ensurePageLoaded()
         {
-            new WebDriverWait(webDriver, 5). until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Войти']")));
-            return this;
+            try{ new WebDriverWait(webDriver, 5).until(visibilityOf(enterButton));
+            return this;}
+            catch (TimeoutException e)
+            {return this;}
         }
 
         public StartingPage (WebDriver webDriver)
@@ -26,9 +29,9 @@ public class StartingPage {
             PageFactory.initElements(webDriver, this);
         }
 
-        public void clickEnterButton(Boolean isToAutorize)
+        public void clickEnterButton(Boolean isToAuthorize)
         {
-            if (isToAutorize){enterButton.click();}
+            if (isToAuthorize){enterButton.click();}
         }
 
         public StartingPage openStaringPage(Boolean isToAutorize){

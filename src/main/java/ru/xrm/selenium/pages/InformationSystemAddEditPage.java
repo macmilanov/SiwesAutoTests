@@ -9,8 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.xrm.selenium.model.InformationSystem;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 public class InformationSystemAddEditPage {
     @FindBy(xpath = "//button[normalize-space()='Сохранить']")
@@ -36,7 +35,7 @@ public class InformationSystemAddEditPage {
     public InformationSystemAddEditPage ensurePageLoaded()
     {
         new WebDriverWait(webDriver, 5).until(ExpectedConditions.or(
-                presenceOfElementLocated(By.xpath("//button[normalize-space()='Сохранить']")),
+                visibilityOf(submitButton),
                 elementToBeClickable(isActiveState)));
         return this;
     }

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class KeycloakLoginPage {
 
@@ -35,7 +36,7 @@ public class KeycloakLoginPage {
 
     public KeycloakLoginPage ensurePageLoaded()
     {
-        new WebDriverWait(webDriver, 5).until(presenceOfElementLocated(By.xpath("//div[normalize-space()='Идентификация и аутентификация внутренних систем и пользователей']")));
+        new WebDriverWait(webDriver, 5).until(visibilityOf(loginButton));
         return this;
     }
 

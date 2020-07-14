@@ -9,6 +9,9 @@ import ru.xrm.selenium.applogic.ApplicationManager;
 import ru.xrm.selenium.model.InformationSystem;
 import ru.xrm.selenium.pages.InformationSystemAddEditPage;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RuInformationSystemSteps extends ApplicationManager {
     private ApplicationManager appManager;
     private InformationSystem informationSystem;
@@ -39,18 +42,25 @@ public class RuInformationSystemSteps extends ApplicationManager {
     public void fillManagementPageAndSearch(){
         appManager.informationSystemManagementPage.fillManagementPage(appManager.createdInformationSystem)
                 .clickFindButton();
-        String foundInformationSystem = appManager.webDriver.get
-                get();t(By.xpath("//div[@class='registry-row']/div[@class='name']/following-sibling::div[@class='event']")).toString();
-        Assert.assertEquals(appManager.createdInformationSystem.InformationSystemName, foundInformationSystem);
+        String actualInformationSystem = appManager.webDriver.findElement(By.xpath("//div[@class='registry-row']/div[contains(@class,'name')]")).getText();
+        Assert.assertEquals(appManager.createdInformationSystem.InformationSystemName, actualInformationSystem);
     }
 
-    @То ("В списке найдена Информационная система")
-    public void informationSystemIsPresented(){
 
-    }
-
-    @Когда ("Нажимаем ссылку Удалить")
+    @Когда ("Нажимаем ссылку Удалить и подтверждаем удаление ИС")
     public void deleteInformationSystem(){
         appManager.informationSystemManagementPage.clickDeleteLink();
+        appManager.deleteModal.ensureLoaded();
+        String modalContent = appManager.webDriver.findElement(By.xpath("//h2[normalize-space()='Подтвердить']/div[contains()='Вы действительно хотите удалить информационную систему']")).getText();
+        Pattern systemNamePattern = Pattern.compile(".+");
+        Matcher systemNameExtractor = systemNamePattern.matcher(modalContent);
+        Assert.assertEquals(appManager.createdInformationSystem.InformationSystemName, systemNameExtractor.group(1));
+        appManager.deleteModal.confirmButtonClick();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        appManager.informationSystemManagementPage.ensurePageLoaded();
     }
 }
