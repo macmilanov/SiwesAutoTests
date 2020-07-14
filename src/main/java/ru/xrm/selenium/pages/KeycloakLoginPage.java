@@ -26,10 +26,11 @@ public class KeycloakLoginPage {
         return this;
     }
 
-    public void fillTextField (String field, String value)
+    public KeycloakLoginPage fillTextField (String field, String value)
     {
         webDriver.findElement(By.id(field))
                 .sendKeys(value);
+        return this;
     }
 
     public KeycloakLoginPage ensurePageLoaded()
@@ -51,9 +52,12 @@ public class KeycloakLoginPage {
 
 
     public void fillLoginAndPassword(String login, String password) {
-        loginField.clear();
-        loginField.sendKeys(login);
-        passwordField.clear();
-        passwordField.sendKeys(password);
+        fillTheTextFiles(login, loginField);
+        fillTheTextFiles(password, passwordField);
+    }
+
+    private void fillTheTextFiles(String login, WebElement textField) {
+        textField.clear();
+        textField.sendKeys(login);
     }
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.xrm.selenium.model.InformationSystem;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
@@ -14,11 +15,11 @@ public class InformationSystemAddEditPage {
     private WebElement submitButton;
 
     //Элементы реестра ИС
-    @FindBy(xpath = "//label[normalize-space='ТНаименование информационной системы']/following-sibling::input[@class='control']")
+    @FindBy(xpath = "//label[normalize-space()='Наименование информационной системы']/following-sibling::input[@class='control']")
     private WebElement InformationSystemNameField;
     @FindBy(xpath ="//input[@placeholder='Мнемоника']")
     private WebElement InformationSystemMnemonicField;
-    @FindBy(xpath = "//label[normalize-space='ИС активна']/preceding-sibling::input[@type='checkbox']")
+    @FindBy(xpath = "//label[normalize-space()='ИС активна']/preceding-sibling::input[@type='checkbox']")
     private WebElement isActiveState;
 
     private WebDriver webDriver;
@@ -39,4 +40,22 @@ public class InformationSystemAddEditPage {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
+
+    public InformationSystemAddEditPage fillInformationSystemCard(InformationSystem informationSystem) {
+        fillTextField(informationSystem.InformationSystemName);
+        if(!informationSystem.IsActiveState){this.isActiveState.click();}
+        fillTextField(informationSystem.InformationSystemMnemonic);
+        fillTextField(informationSystem.InformationSystemToken);
+        return this;
+    }
+
+    private void fillTextField(String string) {
+        this.InformationSystemNameField.clear();
+        this.InformationSystemNameField.sendKeys(string);
+    }
+
+    public void clickSubmitButton(){
+        submitButton.click();
+    }
+
 }

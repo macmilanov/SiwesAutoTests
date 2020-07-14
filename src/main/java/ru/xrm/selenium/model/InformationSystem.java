@@ -1,5 +1,7 @@
 package ru.xrm.selenium.model;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 public class InformationSystem {
     public String InformationSystemName;
     public String InformationSystemToken;
@@ -38,6 +40,12 @@ public class InformationSystem {
     public InformationSystem setInformationSystemToken(String informationSystemToken)
     {
         this.InformationSystemToken = informationSystemToken;
+        return this;
+    }
+
+    public InformationSystem setIsActiveState(Boolean isActiveState)
+    {
+        this.IsActiveState = isActiveState;
         return this;
     }
 

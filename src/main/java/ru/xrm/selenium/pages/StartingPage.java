@@ -8,32 +8,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-import java.util.function.BooleanSupplier;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
-
 public class StartingPage {
 
         @FindBy(xpath = "//button[normalize-space()='Войти']")
         private WebElement enterButton;
         private WebDriver webDriver;
-        private static String enterButtonText;
-
-        public String getEnterButtonText()
-        {
-            return enterButton.getText();
-        }
-
 
         public StartingPage ensurePageLoaded()
         {
             new WebDriverWait(webDriver, 5). until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Войти']")));
-            return this;
-        }
-
-        public StartingPage getStartingPage()
-        {
             return this;
         }
 

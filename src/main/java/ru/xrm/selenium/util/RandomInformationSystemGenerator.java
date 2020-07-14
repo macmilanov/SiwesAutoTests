@@ -3,6 +3,8 @@ package ru.xrm.selenium.util;
 
 import ru.xrm.selenium.model.InformationSystem;
 
+import java.util.Random;
+
 public class RandomInformationSystemGenerator {
     private static String[] informationSystemName = new String[]
             {
@@ -24,16 +26,17 @@ public class RandomInformationSystemGenerator {
                     "DB085175AF684343888344561C2723C6",
             };
 
-    public static InformationSystem getRandomInformationSystem ()
-    {
-        String name = CollectionUtil.getRandomElement(informationSystemName);
-        String token =  CollectionUtil.getRandomElement(informationSystemToken);
-        String mnemonic = RandomStringUtil.randomRussianString(12);
-        InformationSystem informationSystem = new InformationSystem();
-        informationSystem.setInformationSystemName(name)
-                .setInformationSystemToken(token)
-                .setInformationSystemMnemonic(mnemonic);
+    private static String[] informationSystemMnemonic = new String[]
+            {
 
+            };
+
+    public static InformationSystem getRandomInformationSystem() {
+        InformationSystem informationSystem = new InformationSystem();
+        informationSystem.setInformationSystemName(CollectionUtil.getRandomElement(informationSystemName))
+                .setInformationSystemToken(CollectionUtil.getRandomElement(informationSystemToken))
+                .setInformationSystemMnemonic(RandomStringUtil.randomRussianString(5))
+                .setIsActiveState(new Random().nextBoolean());
         return informationSystem;
     }
 }
