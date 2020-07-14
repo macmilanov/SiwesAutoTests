@@ -51,13 +51,16 @@ public class KeycloakLoginPage {
     }
 
 
-    public void fillLoginAndPassword(String login, String password) {
+    public KeycloakLoginPage fillLoginAndPassword (String login, String password) {
         fillTheTextFiles(login, loginField);
         fillTheTextFiles(password, passwordField);
+        return this;
     }
 
-    private void fillTheTextFiles(String login, WebElement textField) {
+    private KeycloakLoginPage fillTheTextFiles(String login, WebElement textField) {
         textField.clear();
         textField.sendKeys(login);
+        return this;
     }
+
 }

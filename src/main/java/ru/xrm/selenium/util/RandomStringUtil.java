@@ -7,4 +7,9 @@ public class RandomStringUtil {
         char[] chars = "цукенгшщзхъфывапролджэячсмитьбю".toCharArray();
         return RandomStringUtils.random(length, chars);
     }
+    public static String randomNumberString(int length)
+    {
+        char[] chars = "1234567890".toCharArray();
+        return RandomStringUtils.random(length, chars);
+    }
 }

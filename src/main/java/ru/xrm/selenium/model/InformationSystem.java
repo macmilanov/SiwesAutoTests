@@ -33,7 +33,7 @@ public class InformationSystem {
 
     public InformationSystem setInformationSystemMnemonic(String informationSystemMnemonic)
     {
-        this.InformationSystemMnemonic = InformationSystemMnemonic;
+        this.InformationSystemMnemonic = informationSystemMnemonic;
         return this;
     }
 

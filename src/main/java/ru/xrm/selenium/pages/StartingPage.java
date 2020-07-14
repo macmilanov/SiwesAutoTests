@@ -26,13 +26,13 @@ public class StartingPage {
             PageFactory.initElements(webDriver, this);
         }
 
-        public void clickEnterButton()
+        public void clickEnterButton(Boolean isToAutorize)
         {
-            enterButton.click();
+            if (isToAutorize){enterButton.click();}
         }
 
-        public StartingPage openStaringPage(Boolean isAuthorized){
-        if(isAuthorized)
+        public StartingPage openStaringPage(Boolean isToAutorize){
+        if(isToAutorize)
         {
             webDriver.navigate().to("http://siwes.xrm.ru:10480");
         }

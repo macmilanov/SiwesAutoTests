@@ -26,16 +26,12 @@ public class RandomInformationSystemGenerator {
                     "DB085175AF684343888344561C2723C6",
             };
 
-    private static String[] informationSystemMnemonic = new String[]
-            {
-
-            };
 
     public static InformationSystem getRandomInformationSystem() {
         InformationSystem informationSystem = new InformationSystem();
         informationSystem.setInformationSystemName(CollectionUtil.getRandomElement(informationSystemName))
                 .setInformationSystemToken(CollectionUtil.getRandomElement(informationSystemToken))
-                .setInformationSystemMnemonic(RandomStringUtil.randomRussianString(5))
+                .setInformationSystemMnemonic(RandomStringUtil.randomNumberString(5))
                 .setIsActiveState(new Random().nextBoolean());
         return informationSystem;
     }
