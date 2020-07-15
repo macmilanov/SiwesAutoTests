@@ -9,17 +9,14 @@ import ru.xrm.selenium.applogic.ApplicationManager;
 import ru.xrm.selenium.model.InformationSystem;
 import ru.xrm.selenium.pages.InformationSystemAddEditPage;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class RuInformationSystemSteps extends ApplicationManager {
     private ApplicationManager appManager;
-    private InformationSystem informationSystem;
 
-    public RuInformationSystemSteps (ApplicationManager applicationManager){
+    public RuInformationSystemSteps(ApplicationManager applicationManager) {
         this.appManager = applicationManager;
     }
-    @Когда("Кликаем кнопку \"Добавить\"")
+
+    @Когда("Кликаем кнопку Добавить")
     public void clickAddButton() {
         appManager.informationSystemManagementPage
                 .ensurePageLoaded()
@@ -28,7 +25,7 @@ public class RuInformationSystemSteps extends ApplicationManager {
 
     @То("Открывается карточка создания Информационной системы")
     public InformationSystemAddEditPage openInformationSystemAddEditPage() {
-        return appManager.informationSystemAddEditPage.ensurePageLoaded();
+        return appManager.informationSystemAddEditPage.ensurePageLoaded(false);
     }
 
     @И("Заполняем форму информационной системы случайно сгенерированными значениями и Нажимаем кнопку Сохранить")
@@ -38,29 +35,43 @@ public class RuInformationSystemSteps extends ApplicationManager {
                 .clickSubmitButton();
     }
 
-    @Когда ("Вводим в фильтр данные Информационной Системы и нажимаем кнопку Искать")
-    public void fillManagementPageAndSearch(){
+    @Когда("Вводим в фильтр данные Информационной Системы и проверяем найденное значение")
+    public void fillManagementPageAndSearch() {
         appManager.informationSystemManagementPage.fillManagementPage(appManager.createdInformationSystem)
                 .clickFindButton();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String actualInformationSystem = appManager.webDriver.findElement(By.xpath("//div[@class='registry-row']/div[contains(@class,'name')]")).getText();
         Assert.assertEquals(appManager.createdInformationSystem.InformationSystemName, actualInformationSystem);
     }
 
+    @И("Кликаем на ссылку Редактировать и проверяем корректность заполнения карточки")
+    public void openInformationSystemCardAndCheckContent() {
+        appManager.informationSystemManagementPage.clickEditLink();
+        appManager.informationSystemAddEditPage.ensurePageLoaded(true);
+        InformationSystem actualInformationSystem =  appManager.informationSystemAddEditPage.readInformationSystemCard();
+        Assert.assertTrue(actualInformationSystem.equals(appManager.createdInformationSystem));
+    }
 
-    @Когда ("Нажимаем ссылку Удалить и подтверждаем удаление ИС")
-    public void deleteInformationSystem(){
+    @И ("Кликаем на кнопку \"Отменить\"")
+    public void clickCancelButton(){
+        appManager.informationSystemAddEditPage.clickCancelButton();
+    }
+
+    @Когда("Нажимаем ссылку Удалить и подтверждаем удаление ИС")
+    public void deleteInformationSystem() {
         appManager.informationSystemManagementPage.clickDeleteLink();
         appManager.deleteModal.ensureLoaded();
-        String modalContent = appManager.webDriver.findElement(By.xpath("//h2[normalize-space()='Подтвердить']/div[contains()='Вы действительно хотите удалить информационную систему']")).getText();
-        Pattern systemNamePattern = Pattern.compile(".+");
-        Matcher systemNameExtractor = systemNamePattern.matcher(modalContent);
-        Assert.assertEquals(appManager.createdInformationSystem.InformationSystemName, systemNameExtractor.group(1));
-        appManager.deleteModal.confirmButtonClick();
         try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            String actualInformationSystemName = appManager.deleteModal.checkInformationSystemName(appManager.createdInformationSystem.InformationSystemName);
+            Assert.assertEquals(appManager.createdInformationSystem.InformationSystemName, actualInformationSystemName);
+        } finally {
+            appManager.deleteModal.confirmButtonClick();
         }
         appManager.informationSystemManagementPage.ensurePageLoaded();
     }
+
 }

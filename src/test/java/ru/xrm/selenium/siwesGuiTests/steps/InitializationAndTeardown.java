@@ -23,6 +23,6 @@ public class InitializationAndTeardown extends ApplicationManager {
         if (scenario.isFailed()) {
             byte[] screenshot = ((TakesScreenshot) appManager.webDriver).getScreenshotAs(OutputType.BYTES);
         }
-        appManager.webDriver.close();
+        appManager.webDriver.quit();
     }
 }

@@ -11,34 +11,28 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class StartingPage {
 
-        @FindBy(xpath = "//button[normalize-space()='Войти']")
-        private WebElement enterButton;
-        private WebDriver webDriver;
+    @FindBy(xpath = "//button[normalize-space()='Войти']")
+    private WebElement enterButton;
+    private WebDriver webDriver;
 
-        public StartingPage ensurePageLoaded()
-        {
-            try{ new WebDriverWait(webDriver, 5).until(visibilityOf(enterButton));
-            return this;}
-            catch (TimeoutException e)
-            {return this;}
+    public StartingPage ensurePageLoaded() {
+        try {
+            new WebDriverWait(webDriver, 5).until(visibilityOf(enterButton));
+            return this;
+        } catch (TimeoutException e) {
+            return this;
         }
-
-        public StartingPage (WebDriver webDriver)
-        {
-            this.webDriver = webDriver;
-            PageFactory.initElements(webDriver, this);
-        }
-
-        public void clickEnterButton(Boolean isToAuthorize)
-        {
-            if (isToAuthorize){enterButton.click();}
-        }
-
-        public StartingPage openStaringPage(Boolean isToAutorize){
-        if(isToAutorize)
-        {
-            webDriver.navigate().to("http://siwes.xrm.ru:10480");
-        }
-        return this.ensurePageLoaded();
     }
- }
+
+    public StartingPage(WebDriver webDriver) {
+        this.webDriver = webDriver;
+        PageFactory.initElements(webDriver, this);
+    }
+
+    public void clickEnterButton(Boolean isToAuthorize) {
+        if (isToAuthorize) {
+            enterButton.click();
+        }
+    }
+
+}

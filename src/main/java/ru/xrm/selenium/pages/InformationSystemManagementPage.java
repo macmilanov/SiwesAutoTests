@@ -1,9 +1,6 @@
 package ru.xrm.selenium.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,6 +23,8 @@ public class InformationSystemManagementPage {
     private WebElement clearFilterButton;
     @FindBy(xpath = "//a[@class='event-link' and normalize-space()='Удалить']")
     private WebElement deleteLink;
+    @FindBy(xpath = "//a[@class='event-link' and normalize-space()='Редактировать']")
+    private WebElement editLink;
 
     //Элементы реестра ИС
     @FindBy(xpath = "//input[@placeholder='Наименование ИС']")
@@ -41,8 +40,12 @@ public class InformationSystemManagementPage {
     }
 
     public InformationSystemManagementPage ensurePageLoaded() {
-        new WebDriverWait(webDriver, 5).until(visibilityOf(addButton));
-        return this;
+        try {
+            new WebDriverWait(webDriver, 5).until(visibilityOf(addButton));
+            return this;
+        } catch (TimeoutException e) {
+            return this;
+        }
     }
 
     public InformationSystemManagementPage(WebDriver webDriver) {
@@ -52,6 +55,10 @@ public class InformationSystemManagementPage {
 
     public void clickAddButton() {
         addButton.click();
+    }
+
+    public void clickEditLink() {
+        editLink.click();
     }
 
     public void clickExitButton() {

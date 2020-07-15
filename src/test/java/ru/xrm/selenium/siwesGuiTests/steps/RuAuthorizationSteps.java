@@ -18,8 +18,9 @@ public class RuAuthorizationSteps extends ApplicationManager {
     @Дано("Открыта стартовая страница, пользователь {string}")
     public void staringPageOpened(String authorizeAction) {
         Boolean bool = authorizeAction.equals("готов к авторизации и кликаем кнопку войти");
-        appManager.startingPage.openStaringPage(bool)
-                .ensurePageLoaded().clickEnterButton(bool);}
+        appManager.openStaringPage(bool);
+        appManager.startingPage.ensurePageLoaded().clickEnterButton(bool);
+    }
 
 
     @То("Происходит редирект на страницу авторизации Keycloak")

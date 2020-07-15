@@ -10,11 +10,7 @@ import java.io.FileReader;
 import java.util.List;
 import java.util.Properties;
 
-/*
- * Class that extracts properties from the prop file.
- *
- * @author Sebastiano Armeli-Battana
- */
+
 public class PropertyLoader
 {
     private static final String PROP_FILE = "/application.properties";

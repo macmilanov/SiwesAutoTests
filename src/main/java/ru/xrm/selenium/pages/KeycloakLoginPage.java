@@ -1,6 +1,7 @@
 package ru.xrm.selenium.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,8 +37,13 @@ public class KeycloakLoginPage {
 
     public KeycloakLoginPage ensurePageLoaded()
     {
+        try{
         new WebDriverWait(webDriver, 5).until(visibilityOf(loginButton));
-        return this;
+        return this;}
+        catch (TimeoutException e)
+        {
+            return this;
+        }
     }
 
     public void clickLoginButton()
