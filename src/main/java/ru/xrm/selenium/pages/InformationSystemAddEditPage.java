@@ -9,14 +9,8 @@ import ru.xrm.selenium.model.InformationSystem;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
-public class InformationSystemAddEditPage {
-    @FindBy(xpath = "//button[normalize-space()='Сохранить']")
-    private WebElement submitButton;
+public class InformationSystemAddEditPage extends Page{
 
-    @FindBy(xpath = "//button[normalize-space()='Отменить']")
-    private WebElement cancelButton;
-
-    //Элементы реестра ИС
     @FindBy(xpath = "//label[normalize-space()='Наименование информационной системы']/following-sibling::input[@class='control']")
     private WebElement informationSystemNameField;
     @FindBy(xpath = "//label[normalize-space()='Мнемоника']/following-sibling::input[@class='control']")
@@ -25,8 +19,6 @@ public class InformationSystemAddEditPage {
     private WebElement isActiveState;
     @FindBy(xpath = "//input[@placeholder='Token']")
     private WebElement informationSystemTokenField;
-
-    private WebDriver webDriver;
 
     public InformationSystemAddEditPage getInformationSystemAddEditPage() {
         return this;
@@ -46,9 +38,8 @@ public class InformationSystemAddEditPage {
         }
     }
 
-
     public InformationSystemAddEditPage(WebDriver webDriver) {
-        this.webDriver = webDriver;
+        super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
 
@@ -68,22 +59,6 @@ public class InformationSystemAddEditPage {
         fillTextField(informationSystem.InformationSystemToken, informationSystemTokenField);
         return this;
     }
-
-    private void fillTextField(String string, WebElement webElement) {
-        webElement.click();
-        webElement.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        webElement.sendKeys(Keys.BACK_SPACE);
-        webElement.sendKeys(string);
-    }
-
-    public void clickSubmitButton() {
-        submitButton.click();
-    }
-
-    public void clickCancelButton() {
-        cancelButton.click();
-    }
-
 
     public InformationSystem readInformationSystemCard() {
         return new InformationSystem()

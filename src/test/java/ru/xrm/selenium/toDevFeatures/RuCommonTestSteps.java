@@ -1,4 +1,4 @@
-package ru.xrm.selenium.siwesGuiTests.steps;
+package ru.xrm.selenium.toDevFeatures;
 
 import ru.xrm.selenium.applogic.ApplicationManager;
 
