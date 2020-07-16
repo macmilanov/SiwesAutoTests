@@ -30,9 +30,7 @@ public class RuInformationSystemSteps extends ApplicationManager {
 
     @И("Заполняем форму информационной системы случайно сгенерированными значениями {string} и кликаем кнопку Сохранить")
     public void fillInformationSystemCard(String systemToCreate) {
-        InformationSystem informationSystem;
-        informationSystem = systemToCreate.equals("для создания") ? appManager.createdInformationSystem
-                :appManager.editedInformationSystem;
+        InformationSystem informationSystem = appManager.selectInformationSystem(systemToCreate);
         appManager.informationSystemAddEditPage
                 .fillInformationSystemCard(informationSystem)
                 .clickSubmitButton();
@@ -40,9 +38,7 @@ public class RuInformationSystemSteps extends ApplicationManager {
 
     @Когда("Вводим в фильтр данные Информационной Системы {string} и проверяем найденное значение")
     public void fillManagementPageAndSearch(String systemToCreate) {
-        InformationSystem informationSystem;
-        informationSystem = systemToCreate.equals("для создания") ? appManager.createdInformationSystem
-                :appManager.editedInformationSystem;
+        InformationSystem informationSystem = appManager.selectInformationSystem(systemToCreate);
         appManager.informationSystemManagementPage.fillManagementPage(informationSystem)
                 .clickFindButton();
         try {
@@ -56,9 +52,7 @@ public class RuInformationSystemSteps extends ApplicationManager {
 
     @И("Кликаем на ссылку Редактировать и проверяем корректность заполнения карточки информационной системы для {string}")
     public void openInformationSystemCardAndCheckContent(String systemToCreate) {
-        InformationSystem informationSystem;
-        informationSystem = systemToCreate.equals("для создания") ? appManager.createdInformationSystem
-                :appManager.editedInformationSystem;
+        InformationSystem informationSystem = appManager.selectInformationSystem(systemToCreate);
         appManager.informationSystemManagementPage.clickEditLink();
         appManager.informationSystemAddEditPage.ensurePageLoaded(true);
         InformationSystem actualInformationSystem =  appManager.informationSystemAddEditPage.readInformationSystemCard();
@@ -72,9 +66,7 @@ public class RuInformationSystemSteps extends ApplicationManager {
 
     @Когда("Нажимаем ссылку Удалить и подтверждаем удаление ИС {string}")
     public void deleteInformationSystem(String systemToCreate) {
-        InformationSystem informationSystem;
-        informationSystem = systemToCreate.equals("для создания") ? appManager.createdInformationSystem
-                :appManager.editedInformationSystem;
+        InformationSystem informationSystem = appManager.selectInformationSystem(systemToCreate);
         appManager.informationSystemManagementPage.clickDeleteLink();
         appManager.deleteModal.ensureLoaded();
         try {

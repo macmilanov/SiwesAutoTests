@@ -40,4 +40,11 @@ public class ApplicationManager {
         {
             webDriver.navigate().to(baseUrl);
         } }
+
+    public InformationSystem selectInformationSystem(String systemToCreate) {
+        InformationSystem informationSystem;
+        informationSystem = systemToCreate.equals("для создания") ? this.createdInformationSystem
+                : this.editedInformationSystem;
+        return informationSystem;
+    }
 }
