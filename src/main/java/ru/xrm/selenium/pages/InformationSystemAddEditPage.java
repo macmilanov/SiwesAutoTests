@@ -1,9 +1,6 @@
 package ru.xrm.selenium.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -36,15 +33,15 @@ public class InformationSystemAddEditPage {
     }
 
     public InformationSystemAddEditPage ensurePageLoaded(Boolean pageToEdit) {
-        try{
-        WebElement pageTitle = pageToEdit ? webDriver.findElement(By.xpath("//h2[normalize-space()='Изменение информационной системы, зарегистрированной в СМЭВ']"))
-                : webDriver.findElement(By.xpath("//h2[normalize-space()='Добавление информационной системы, зарегистрированной в СМЭВ']"));
-        new WebDriverWait(webDriver, 5).until(ExpectedConditions.or(
-                visibilityOf(pageTitle),
-                visibilityOf(submitButton),
-                elementToBeClickable(isActiveState)));
-        return this;}
-        catch (TimeoutException e){
+        try {
+            WebElement pageTitle = pageToEdit ? webDriver.findElement(By.xpath("//h2[normalize-space()='Изменение информационной системы, зарегистрированной в СМЭВ']"))
+                    : webDriver.findElement(By.xpath("//h2[normalize-space()='Добавление информационной системы, зарегистрированной в СМЭВ']"));
+            new WebDriverWait(webDriver, 5).until(ExpectedConditions.or(
+                    visibilityOf(pageTitle),
+                    visibilityOf(submitButton),
+                    elementToBeClickable(isActiveState)));
+            return this;
+        } catch (TimeoutException e) {
             return this;
         }
     }
@@ -57,8 +54,15 @@ public class InformationSystemAddEditPage {
 
     public InformationSystemAddEditPage fillInformationSystemCard(InformationSystem informationSystem) {
         fillTextField(informationSystem.InformationSystemName, informationSystemNameField);
-        if (!informationSystem.IsActiveState) {
-            this.isActiveState.click();
+        if (informationSystem.IsActiveState) {
+            if (!isActiveState.isSelected()) {
+                this.isActiveState.click();
+            }
+        }
+        else{
+            if(isActiveState.isSelected()){
+                this.isActiveState.click();
+            }
         }
         fillTextField(informationSystem.InformationSystemMnemonic, informationSystemMnemonicField);
         fillTextField(informationSystem.InformationSystemToken, informationSystemTokenField);
@@ -66,13 +70,16 @@ public class InformationSystemAddEditPage {
     }
 
     private void fillTextField(String string, WebElement webElement) {
-        webElement.clear();
+        webElement.click();
+        webElement.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        webElement.sendKeys(Keys.BACK_SPACE);
         webElement.sendKeys(string);
     }
 
     public void clickSubmitButton() {
         submitButton.click();
     }
+
     public void clickCancelButton() {
         cancelButton.click();
     }

@@ -3,6 +3,7 @@ package ru.xrm.selenium.pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.xrm.selenium.applogic.ApplicationManager;
 import ru.xrm.selenium.model.InformationSystem;
@@ -78,11 +79,12 @@ public class InformationSystemManagementPage {
         webElement.clear();
         webElement.sendKeys(string);
         try {
-            Thread.sleep(1000);
+            WebElement dropDownValue = webDriver.findElement(By.xpath("//div[@class='v-autocomplete-list']/div[contains(@class, 'v-autocomplete-list-item')]/div[normalize-space()='"+string+"']"));
+            Thread.sleep(500);
+            dropDownValue.click();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        webElement.sendKeys(Keys.TAB);
     }
 
 

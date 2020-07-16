@@ -35,8 +35,8 @@ public class RandomInformationSystemGenerator {
 
     public static InformationSystem getRandomInformationSystem() {
         InformationSystem informationSystem = new InformationSystem();
-        informationSystem.setInformationSystemName(CollectionUtil.getRandomElement(informationSystemName))
-                .setInformationSystemToken(CollectionUtil.getRandomElement(informationSystemToken))
+        informationSystem.setInformationSystemName(RandomStringUtil.randomRussianString(5))
+                .setInformationSystemToken(RandomStringUtil.randomRussianString(5))
                 .setInformationSystemMnemonic(RandomStringUtil.randomNumberString(5))
                 .setIsActiveState(new Random().nextBoolean());
         return informationSystem;
