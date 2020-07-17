@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="siwesGuiTest" />
+        <module name="siwesTests" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="siwesGuiTest" target="1.7" />
+      <module name="siwesTests" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
