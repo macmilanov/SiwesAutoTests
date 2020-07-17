@@ -17,7 +17,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 public class ParticipantAddEditPage extends Page {
     @FindBy(xpath = "//label[normalize-space()='Наименование подсистемы или отдельного компонента ЕИСЖС']/following-sibling::input[@class='control']")
     private WebElement participantName;
-    @FindBy(xpath = "//dib[@class='vs__selected-options']/input[@class='vs__search']")
+    @FindBy(xpath = "//div[@class='vs__selected-options']/input[@class='vs__search']")
     private WebElement participantInformationSystem;
     @FindBy(xpath = "//label[normalize-space()='Подсистема/компонент активен']/preceding-sibling::input[@type='checkbox']")
     private WebElement isActiveState;

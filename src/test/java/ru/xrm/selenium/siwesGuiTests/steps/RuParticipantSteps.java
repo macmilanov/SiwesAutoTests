@@ -18,22 +18,22 @@ public class RuParticipantSteps extends ApplicationManager {
     }
 
     @Когда("Переходим в меню \"Подсистемы и компоненты\"")
-    private void participantMenuClick() {
+    public void participantMenuClick() {
         appManager.informationSystemManagementPage.clickParticipantMenu();
     }
 
     @То("Должен быть открыт реестр \"Подсистемы и компоненты\"")
-    private ParticipantManagementPage openInformationSystemAddEditPage() {
+    public ParticipantManagementPage openInformationSystemAddEditPage() {
         return appManager.participantManagementPage.ensurePageLoaded();
     }
 
     @Когда("Кликаем кнопку Добавить в реестре подсистем")
-    private void clickAddParticipantButton() {
+    public void clickAddParticipantButton() {
         appManager.participantManagementPage.clickAddButton();
     }
 
     @То("Открывается карточка создания Подсистемы")
-    private ParticipantAddEditPage openParticipantAddEditPage() {
+    public ParticipantAddEditPage openParticipantAddEditPage() {
         return appManager.participantAddEditPage.ensurePageLoaded(false);
     }
 
@@ -68,7 +68,7 @@ public class RuParticipantSteps extends ApplicationManager {
         Assert.assertEquals(actualParticipant, participant);
     }
 
-    @Когда("Кликаем на кнопку \"Отменить\" в реестре подсистем")
+    @Когда("Кликаем на кнопку \"Отменить\" на карточке подсистемы")
     public void clickCancelParticipantButton() {
         appManager.participantAddEditPage.clickCancelButton();
     }
