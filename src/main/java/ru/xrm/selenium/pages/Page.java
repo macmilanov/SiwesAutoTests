@@ -6,6 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class Page {
     public WebDriver webDriver;
@@ -30,6 +35,8 @@ public class Page {
     protected WebElement participantMenu;
     @FindBy(xpath = "//li[normalize-space()='Виды сведений']")
     protected WebElement smevServiceMenu;
+    @FindBy(xpath = "//li[normalize-space()='Учетные записи администраторов']")
+    protected WebElement userMenu;
 
     //Общие элементы карточек
     @FindBy(xpath = "//button[normalize-space()='Сохранить']")
@@ -54,6 +61,12 @@ public class Page {
         }
     }
 
+    public Page ensurePageLoaded() {
+        new WebDriverWait(webDriver, 5).until(ExpectedConditions.or(
+                visibilityOf(submitButton),
+                elementToBeClickable(isActiveState)));
+        return this;
+    }
 
     protected void fillTextField(String string, WebElement webElement) {
         webElement.click();
@@ -62,32 +75,36 @@ public class Page {
         webElement.sendKeys(string);
     }
 
-    public void clickFindButton() {
-        findButton.click();
+    public void clickButton(String buttonText) {
+        switch (buttonText) {
+            case "Добавить":
+                addButton.click();
+                break;
+            case "Найти":
+                findButton.click();
+                break;
+            case "Отменить":
+                cancelButton.click();
+                break;
+            case "Выход":
+                exitButton.click();
+                break;
+            case "Сохранить":
+                submitButton.click();
+                break;
+        }
     }
 
     public void clickDeleteLink() {
         deleteLink.click();
     }
 
-    public void clickAddButton() {
-        addButton.click();
-    }
-
     public void clickEditLink() {
         editLink.click();
     }
 
-    public void clickExitButton() {
-        exitButton.click();
-    }
-
-    public void clickSubmitButton() {
-        submitButton.click();
-    }
-
-    public void clickCancelButton() {
-        cancelButton.click();
+    public void clickFindButton() {
+        findButton.click();
     }
 
     public void clickInformationSystemMenu() {
@@ -102,5 +119,8 @@ public class Page {
         smevServiceMenu.click();
     }
 
+    public void clickUserMenu() {
+        userMenu.click();
+    }
 
 }

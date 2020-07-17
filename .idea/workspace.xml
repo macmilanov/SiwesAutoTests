@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3159541f-199f-4d81-b5b1-1ae76cde266e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/TestSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/util/PageList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuCommonTestSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/RuInformationSystem.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/ParticipantAddEditPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/ParticipantAddEditPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/applogic/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/applogic/ApplicationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/SmevServiceManagementPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/SmevServiceManagementPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/UserManagementPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/UserManagementPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/RuAdministrationModuleLogin.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/RuAdministrationModuleLogin.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/RuInformationSystem.feature" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/RuParticipant.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/RuParticipant.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuAuthorizationSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuAuthorizationSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuInformationSystemSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuInformationSystemSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuParticipantSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuParticipantSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/RuCommonTestSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/TestSteps.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,56 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/RunSiwesGuiTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/RuParticipant.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
-              <caret line="9" selection-start-line="9" selection-start-column="1" selection-end-line="21" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuParticipantSteps.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="70" column="65" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/ParticipantAddEditPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-300">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/TestSteps.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="614">
+              <caret line="53" column="67" lean-forward="true" selection-start-line="53" selection-start-column="67" selection-end-line="53" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -78,11 +44,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuInformationSystemSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-769">
-              <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+            <state relative-caret-position="138">
+              <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="59" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#543#544#0" expanded="true" />
                 <element signature="e#595#596#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuParticipantSteps.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="74">
+              <caret line="35" column="54" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,6 +92,14 @@
       <find>conta</find>
       <find>clickCancelButton</find>
       <find>меню</find>
+      <find>сохранить</find>
+      <find>добав</find>
+      <find>Добавить</find>
+      <find>редактирова</find>
+      <find>редакти</find>
+      <find>реестр</find>
+      <find>click</find>
+      <find>delete</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,9 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/webdriver/webdriver/WebDricerFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/siwesGuiTests/RunSiwesGuiTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/applogic/NavigationHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/constans/ApplicationProperties.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/siwesGuiTests/steps/SiwesSteps.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/webdriver/webdriver/WebDriverFactory.java" />
@@ -137,13 +121,11 @@
         <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/InformationSystemFeature.feature" />
         <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/AdministrationModuleLogin.feature" />
         <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/AuthorizationSteps.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/RuAdministrationModuleLogin.feature" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/util/RandomStringUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/InitializationAndTeardown.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/util/PropertyLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/InformationSystemDeleteModal.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/KeycloakLoginPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuAuthorizationSteps.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/StartingPage.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/util/CollectionUtil.java" />
@@ -151,26 +133,31 @@
         <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/RuInformationSystemFeature.feature" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/InformationSystemManagementPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/model/InformationSystem.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuCommonTestSteps.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/model/Participant.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/util/RandomParticipantGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/ParticipantManagementPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/applogic/ApplicationManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/ParticipantDeleteModal.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/ModalWindow.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/DeletionModalWindow.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/RuInformationSystem.feature" />
         <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/RuParticipant.feature" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/InformationSystemAddEditPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/Page.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/RuCommonTestSteps.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuInformationSystemSteps.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/йцу.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/testSteps.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/TestSteps.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/ParticipantAddEditPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuParticipantSteps.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/util/PageList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/SmevServiceManagementPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/UserManagementPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/applogic/ApplicationManager.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuAuthorizationSteps.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/RuAdministrationModuleLogin.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuCommonTestSteps.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/Page.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuInformationSystemSteps.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/RuInformationSystem.feature" />
         <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/RuInformationSystem.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuParticipantSteps.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/RuParticipant.feature" />
       </list>
     </option>
@@ -208,8 +195,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="716" />
-    <option name="y" value="31" />
+    <option name="x" value="374" />
+    <option name="y" value="420" />
     <option name="width" value="1427" />
     <option name="height" value="1019" />
   </component>
@@ -253,6 +240,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="selenium" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="siweGuiTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="siweGuiTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="selenium" type="462c0819:PsiDirectoryNode" />
+              <item name="applogic" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="siweGuiTest" type="b2602c69:ProjectViewProjectNode" />
@@ -355,8 +351,8 @@
       <recent name="ru.xrm.selenium.siwesGuiTests" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Work\project\siweGuiTest\src\test\java\ru\xrm\selenium\toDevFeatures" />
       <recent name="D:\Work\project\siweGuiTest\src\test\java\ru\xrm\selenium\SiwesGuiFeatures" />
+      <recent name="D:\Work\project\siweGuiTest\src\test\java\ru\xrm\selenium\toDevFeatures" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -487,44 +483,44 @@
       <workItem from="1594875378711" duration="17078000" />
       <workItem from="1594894936858" duration="390000" />
       <workItem from="1594927495647" duration="294000" />
-      <workItem from="1594954882312" duration="2694000" />
+      <workItem from="1594954882312" duration="17727000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 00h 19m 27s.xml">
+    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 12h 06m 03s.xml">
       <configuration name="RunSiwesGuiTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 00h 23m 13s.xml">
+    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 12h 15m 50s.xml">
       <configuration name="RunSiwesGuiTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 00h 25m 19s.xml">
+    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 12h 32m 26s.xml">
       <configuration name="RunSiwesGuiTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 08h 17m 16s.xml">
+    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 12h 43m 58s.xml">
       <configuration name="RunSiwesGuiTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 08h 29m 56s.xml">
+    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 12h 46m 19s.xml">
       <configuration name="RunSiwesGuiTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 08h 30m 50s.xml">
+    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 12h 47m 05s.xml">
       <configuration name="RunSiwesGuiTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 08h 33m 47s.xml">
+    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 12h 47m 53s.xml">
       <configuration name="RunSiwesGuiTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 08h 37m 26s.xml">
+    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 12h 55m 46s.xml">
       <configuration name="RunSiwesGuiTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 08h 43m 48s.xml">
+    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 12h 57m 28s.xml">
       <configuration name="RunSiwesGuiTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 08h 45m 30s.xml">
+    <history-entry file="RunSiwesGuiTest - 2020.07.17 at 12h 59m 49s.xml">
       <configuration name="RunSiwesGuiTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153048000" />
+    <option name="totallyTimeSpent" value="168081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -540,16 +536,16 @@
       <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4989339" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.06663113" side_tool="true" visible="true" weight="0.5655471" />
+      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.06982943" side_tool="true" visible="true" weight="0.5655471" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" sideWeight="0.49635416" weight="0.31428573" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.93336886" visible="true" weight="0.5655471" />
-      <window_info anchor="bottom" id="Debug" order="8" sideWeight="0.9323028" weight="0.5362947" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.9301706" visible="true" weight="0.5655471" />
+      <window_info anchor="bottom" id="Debug" order="8" sideWeight="0.9291045" weight="0.5362947" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48933902" weight="0.32827735" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48880598" weight="0.32827735" />
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -615,36 +611,63 @@
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuAuthorizationSteps.java</url>
-          <line>39</line>
+          <url>file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuCommonTestSteps.java</url>
+          <line>45</line>
           <properties />
-          <option name="timeStamp" value="44" />
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/Page.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/applogic/ApplicationManager.java</url>
+          <line>95</line>
+          <properties />
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/applogic/ApplicationManager.java</url>
+          <line>77</line>
+          <properties />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/applogic/ApplicationManager.java</url>
+          <line>78</line>
+          <properties />
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/InformationSystemManagementPage.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/InformationSystemManagementPage.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/ParticipantManagementPage.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuCommonTestSteps.java</url>
+          <line>22</line>
+          <properties />
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-java/6.2.2/cucumber-java-6.2.2.jar!/io/cucumber/java/Invoker.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-14.0.1/lib/src.zip!/java.base/java/util/concurrent/ConcurrentHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="933" column="13" selection-start-line="933" selection-start-column="13" selection-end-line="933" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-14.0.1/lib/src.zip!/java.base/java/util/Properties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="142" column="13" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/constans/ApplicationProperties.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/siwesGuiTests/RunSiwesGuiTest.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar!/org/openqa/selenium/support/PageFactory.class">
@@ -745,16 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/StartingPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
@@ -801,16 +814,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1366#1367#0" expanded="true" />
             <element signature="e#1401#1402#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuAuthorizationSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -871,26 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/InformationSystemManagementPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/ParticipantManagementPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="80" lean-forward="true" selection-start-line="37" selection-start-column="80" selection-end-line="37" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/ParticipantDeleteModal.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/InformationSystemDeleteModal.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/DeletionModalWindow.java">
@@ -917,42 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="102" column="5" lean-forward="true" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3246#3247#0" expanded="true" />
-            <element signature="e#3285#3286#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/applogic/ApplicationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-477">
-          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/RuAdministrationModuleLogin.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/RuCommonTestSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/TestSteps.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -960,21 +907,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuInformationSystemSteps.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/util/PageList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-769">
-          <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/UserManagementPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding>
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#169#170#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/SmevServiceManagementPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding>
+            <element signature="e#183#184#0" expanded="true" />
+            <element signature="e#215#216#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/ParticipantAddEditPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="306">
+          <caret line="39" column="24" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="39" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -991,27 +956,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuParticipantSteps.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/StartingPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="70" column="65" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
+        <state relative-caret-position="193">
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuAuthorizationSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/ParticipantManagementPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/InformationSystemManagementPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuCommonTestSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="35" column="52" lean-forward="true" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#1188#1189#0" expanded="true" />
+            <element signature="e#1235#1236#0" expanded="true" />
+            <element signature="e#1327#1328#0" expanded="true" />
+            <element signature="e#1381#1382#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/applogic/ApplicationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="79" column="88" lean-forward="true" selection-start-line="79" selection-start-column="88" selection-end-line="79" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/xrm/selenium/pages/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/RuAdministrationModuleLogin.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuInformationSystemSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/toDevFeatures/RuInformationSystem.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="9" selection-start-line="9" selection-end-line="19" selection-end-column="72" />
+        <state relative-caret-position="187">
+          <caret line="17" column="71" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/siwesGuiTests/steps/RuParticipantSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="35" column="54" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/xrm/selenium/SiwesGuiFeatures/RuParticipant.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="9" selection-start-line="9" selection-start-column="1" selection-end-line="21" selection-end-column="81" />
+        <state relative-caret-position="614">
+          <caret line="53" column="67" lean-forward="true" selection-start-line="53" selection-start-column="67" selection-end-line="53" selection-end-column="67" />
         </state>
       </provider>
     </entry>

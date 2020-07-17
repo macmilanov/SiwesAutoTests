@@ -1,4 +1,10 @@
 package ru.xrm.selenium.pages;
 
-public class UserManagementPage {
+import org.openqa.selenium.WebDriver;
+
+public class UserManagementPage extends Page{
+
+    public UserManagementPage(WebDriver webDriver) {
+        super(webDriver);
+    }
 }

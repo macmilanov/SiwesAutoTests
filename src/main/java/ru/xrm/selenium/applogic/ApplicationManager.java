@@ -26,6 +26,10 @@ public class ApplicationManager {
     public Page page;
     public ParticipantManagementPage participantManagementPage;
     public ParticipantAddEditPage participantAddEditPage;
+    public SmevServiceManagementPage smevServiceManagementPage;
+    public SmevServiceAddEditPage smevServiceAddEditPage;
+    public UserAddEditPage userAddEditPage;
+    public UserManagementPage userManagementPage;
 
     public void startBrowser() {
         ChromeOptions options = new ChromeOptions();
@@ -49,11 +53,11 @@ public class ApplicationManager {
         editedParticipant = RandomParticipantGenerator.getRandomParticipant();
     }
 
-    public void openStaringPage(Boolean isToAutorize){
-        if(isToAutorize)
-        {
+    public void openStaringPage(Boolean isToAutorize) {
+        if (isToAutorize) {
             webDriver.navigate().to(baseUrl);
-        } }
+        }
+    }
 
     public InformationSystem selectInformationSystem(String systemToCreate) {
         InformationSystem informationSystem;
@@ -67,5 +71,28 @@ public class ApplicationManager {
         participant = systemToCreate.equals("для создания") ? this.createdParticipant
                 : this.editedParticipant;
         return participant;
+    }
+
+    public Page detectPage(String pageName) {
+        Page returnedPage = new Page(this.webDriver);
+        switch (pageName) {
+            case "Информационные системы":
+                returnedPage =  this.informationSystemManagementPage.ensurePageLoaded();
+                break;
+
+            case "Подсистемы и компоненты":
+                returnedPage =  this.participantManagementPage.ensurePageLoaded();
+                break;
+
+            case "Виды сведеий":
+                returnedPage =  this.smevServiceManagementPage;
+                break;
+
+            case "Учетные записи":
+                returnedPage = this.userManagementPage;
+                break;
+
+        }
+        return returnedPage;
     }
 }

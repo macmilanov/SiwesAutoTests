@@ -1,4 +1,10 @@
 package ru.xrm.selenium.pages;
 
-public class SmevServiceManagementPage {
+import org.openqa.selenium.WebDriver;
+
+public class SmevServiceManagementPage extends Page{
+
+    public SmevServiceManagementPage(WebDriver webDriver) {
+        super(webDriver);
+    }
 }
