@@ -2,10 +2,13 @@ package ru.xrm.selenium.applogic;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import ru.xrm.selenium.model.InformationSystem;
+import ru.xrm.selenium.model.Participant;
 import ru.xrm.selenium.pages.*;
 import ru.xrm.selenium.util.PropertyLoader;
 import ru.xrm.selenium.util.RandomInformationSystemGenerator;
+import ru.xrm.selenium.util.RandomParticipantGenerator;
 
 public class ApplicationManager {
     public WebDriver webDriver;
@@ -13,26 +16,37 @@ public class ApplicationManager {
     public KeycloakLoginPage keycloakLoginPage;
     public InformationSystemManagementPage informationSystemManagementPage;
     public InformationSystemAddEditPage informationSystemAddEditPage;
-    public InformationSystemDeleteModal deleteModal;
+    public DeletionModalWindow deleteSystemModal;
     public InformationSystem createdInformationSystem;
     public InformationSystem editedInformationSystem;
+    public Participant createdParticipant;
+    public Participant editedParticipant;
     public String baseUrl;
     public static PropertyLoader loader;
-
+    public Page page;
+    public ParticipantManagementPage participantManagementPage;
+    public ParticipantAddEditPage participantAddEditPage;
 
     public void startBrowser() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
         System.setProperty("webdriver.chrome.driver", "D:\\Work\\drivers\\chromedriver.exe");
-        webDriver = new ChromeDriver();
+        webDriver = new ChromeDriver(options);
         loader = new PropertyLoader();
         loader.setActiveProfileProperties(System.getProperty("profile-id"));
         baseUrl = loader.loadProperty("site.url");
+        page = new Page(webDriver);
         startingPage = new StartingPage(webDriver);
         keycloakLoginPage = new KeycloakLoginPage(webDriver);
         informationSystemManagementPage = new InformationSystemManagementPage(webDriver);
         informationSystemAddEditPage = new InformationSystemAddEditPage(webDriver);
-        deleteModal = new InformationSystemDeleteModal(webDriver);
+        participantAddEditPage = new ParticipantAddEditPage(webDriver);
+        participantManagementPage = new ParticipantManagementPage(webDriver);
+        deleteSystemModal = new DeletionModalWindow(webDriver);
         createdInformationSystem = RandomInformationSystemGenerator.getRandomInformationSystem();
         editedInformationSystem = RandomInformationSystemGenerator.getRandomInformationSystem();
+        createdParticipant = RandomParticipantGenerator.getRandomParticipant();
+        editedParticipant = RandomParticipantGenerator.getRandomParticipant();
     }
 
     public void openStaringPage(Boolean isToAutorize){
@@ -46,5 +60,12 @@ public class ApplicationManager {
         informationSystem = systemToCreate.equals("для создания") ? this.createdInformationSystem
                 : this.editedInformationSystem;
         return informationSystem;
+    }
+
+    public Participant selectParticipant(String systemToCreate) {
+        Participant participant;
+        participant = systemToCreate.equals("для создания") ? this.createdParticipant
+                : this.editedParticipant;
+        return participant;
     }
 }

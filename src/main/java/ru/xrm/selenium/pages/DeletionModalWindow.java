@@ -15,10 +15,10 @@ import java.util.regex.Pattern;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
-public class InformationSystemDeleteModal {
+public class DeletionModalWindow {
     private ApplicationManager applicationManager;
 
-    public InformationSystemDeleteModal(ApplicationManager applicationManager) {
+    public DeletionModalWindow(ApplicationManager applicationManager) {
         this.applicationManager = applicationManager;
     }
 
@@ -28,12 +28,12 @@ public class InformationSystemDeleteModal {
     @FindBy(xpath = "//h2[normalize-space()='Подтверждение действия']")
     private WebElement modalHeader;
 
-    public InformationSystemDeleteModal(WebDriver webDriver) {
+    public DeletionModalWindow(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
 
-    public InformationSystemDeleteModal ensureLoaded() {
+    public DeletionModalWindow ensureLoaded() {
         try {
             new WebDriverWait(webDriver, 5).until(visibilityOf(modalHeader));
             return this;
@@ -46,7 +46,7 @@ public class InformationSystemDeleteModal {
         confirmButton.click();
     }
 
-    public String checkInformationSystemName(String expectedName) {
+    public String checkNameOfObjectToDelete(String expectedName) {
         String noMatch = "No information system name was found";
         String actualModalContent = webDriver.findElement(By.xpath("//h2[normalize-space()='Подтверждение действия']/following-sibling::div")).getText();
         Pattern regExPattern = Pattern.compile("\"(.*?)\"");

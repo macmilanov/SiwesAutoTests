@@ -39,7 +39,7 @@ public class RuInformationSystemSteps extends ApplicationManager {
     @Когда("Вводим в фильтр данные Информационной Системы {string} и проверяем найденное значение")
     public void fillManagementPageAndSearch(String systemToCreate) {
         InformationSystem informationSystem = appManager.selectInformationSystem(systemToCreate);
-        appManager.informationSystemManagementPage.fillManagementPage(informationSystem)
+        appManager.informationSystemManagementPage.fillSystemManagementPage(informationSystem)
                 .clickFindButton();
         try {
             Thread.sleep(1000);
@@ -56,7 +56,7 @@ public class RuInformationSystemSteps extends ApplicationManager {
         appManager.informationSystemManagementPage.clickEditLink();
         appManager.informationSystemAddEditPage.ensurePageLoaded(true);
         InformationSystem actualInformationSystem =  appManager.informationSystemAddEditPage.readInformationSystemCard();
-        Assert.assertTrue(actualInformationSystem.equals(informationSystem));
+        Assert.assertEquals(actualInformationSystem, informationSystem);
     }
 
     @И ("Кликаем на кнопку \"Отменить\"")
@@ -68,14 +68,13 @@ public class RuInformationSystemSteps extends ApplicationManager {
     public void deleteInformationSystem(String systemToCreate) {
         InformationSystem informationSystem = appManager.selectInformationSystem(systemToCreate);
         appManager.informationSystemManagementPage.clickDeleteLink();
-        appManager.deleteModal.ensureLoaded();
+        appManager.deleteSystemModal.ensureLoaded();
         try {
-            String actualInformationSystemName = appManager.deleteModal.checkInformationSystemName(informationSystem.InformationSystemName);
+            String actualInformationSystemName = appManager.deleteSystemModal.checkNameOfObjectToDelete(informationSystem.InformationSystemName);
             Assert.assertEquals(informationSystem.InformationSystemName, actualInformationSystemName);
         } finally {
-            appManager.deleteModal.confirmButtonClick();
+            appManager.deleteSystemModal.confirmButtonClick();
         }
         appManager.informationSystemManagementPage.ensurePageLoaded();
     }
-
 }
