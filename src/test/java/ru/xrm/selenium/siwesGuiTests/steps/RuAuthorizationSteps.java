@@ -4,7 +4,6 @@ import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.Когда;
 import io.cucumber.java.ru.То;
 import ru.xrm.selenium.applogic.ApplicationManager;
-import ru.xrm.selenium.pages.InformationSystemManagementPage;
 import ru.xrm.selenium.pages.KeycloakLoginPage;
 
 
@@ -34,14 +33,4 @@ public class RuAuthorizationSteps extends ApplicationManager {
                 .clickLoginButton();
     }
 
-
-    @То("Должен быть открыт реестр информационных систем")
-    public InformationSystemManagementPage openInformationSystemManagementPage() {
-        return appManager.informationSystemManagementPage.ensurePageLoaded();
-    }
-
-    @Когда("Кликаем кнопку \"Выйти\"")
-    public void clickExitButton() {
-        appManager.informationSystemManagementPage.clickExitButton();
-    }
 }
